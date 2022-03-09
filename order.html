@@ -1,26 +1,3 @@
-<?php
-if ($_SERVER['HTTPS'] != "on") {
-    $url = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-    header("Location: $url");
-    exit;
-}
-?>
-<?php
-@mysql_connect("localhost", "redmoons_broker", "8hSVGSlkcMcu") or die(mysql_error());
-mysql_select_db("redmoons_broker") or die(mysql_error());
-if(isset($_COOKIE['ID_my_site']))
-{
-$username = $_COOKIE['ID_my_site'];
-$pass = $_COOKIE['Key_my_site'];
-$check = mysql_query("SELECT * FROM users WHERE username = '$username'")or die(mysql_error());
-while($info = mysql_fetch_array( $check ))
-{
-if ($pass != $info['password'])
-{ header("Location: index.php");
-}
-else {
-mysql_close();
-?>
 <HTML>
 <HEAD>
 <TITLE>:: Red Moon Studios, Inc. - Graphic Design, Custom Web Work, Printing, Marketing and Consulting ::</TITLE>
@@ -51,9 +28,9 @@ function order_window(url) {
 link = window.open(url,"order","toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=750,height=500");
 
 }
-function template_window(url) {
+function printtemp_window(url) {
 
-link = window.open(url,"template","toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=750,height=500");
+link = window.open(url,"printtemp","toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=750,height=500");
 
 }
 //END Script-->
@@ -97,7 +74,7 @@ our <a href="javascript:glossary_window('glossary.html')">Glossary of Printing
 Terms and Resource listing</a> before asking us any questions.</FONT></P>
 <P><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="2">If
 you have any questions regarding proper sizing, color mode, resolution and live
-area, please download the appropriate file from our <a href="javascript:template_window('printtemp.html')" target="_blank">Flyer
+area, please download the appropriate file from our <a href="javascript:printtemp_window('printtemp.html')">Flyer
 Templates</a>.</FONT></P>
 <P><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="2">Please
 contact <a href="mailto:sales@redmoonstudios.net">sales@redmoonstudios.net</a>
