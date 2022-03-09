@@ -1,0 +1,9 @@
+
+AuthType Basic
+
+AuthName "Admin"
+
+AuthUserFile "/home2/redmoons/.htpasswds/broker/admin/passwd"
+
+
+require valid-user
