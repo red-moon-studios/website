@@ -1,7 +1,0 @@
-
-RewriteEngine on
-
-RewriteCond %{HTTP_HOST} ^broker.redmoonstudios.net$ [OR]
-RewriteCond %{HTTP_HOST} ^www.broker.redmoonstudios.net$
-RewriteRule ^(.*)$ "http\:\/\/www\.redmoonstudios\.net\/BEPO\/index\.html" [R=301,L]
-
